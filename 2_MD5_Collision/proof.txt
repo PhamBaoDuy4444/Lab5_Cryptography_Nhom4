@@ -1,1 +1,0 @@
-# Ghi log so sánh mã MD5 của 2 file trên

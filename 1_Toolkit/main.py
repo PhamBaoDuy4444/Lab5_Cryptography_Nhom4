@@ -34,8 +34,8 @@ def asym_api():
 # API xử lý hàm băm (MD5, SHA256)
 @app.route('/api/hash', methods=['POST'])
 def hash_api():
-    data = request.json
-    result = handle_hashing(data['algo'], data['input'])
+    data = request.get_json(silent=True) or {}
+    result = handle_hashing(data.get('algo'), data.get('input'))
     return jsonify(result)
 
 if __name__ == '__main__':
